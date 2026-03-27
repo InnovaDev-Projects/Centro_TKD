@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import logoUrl from "./assets/logo.png";
+import wolfUrl from "./assets/wolf.png";
 import {
   ShieldCheck, Zap, Users, Trophy, Star, Menu, X, MapPin,
   ChevronDown, Play, ChevronLeft, ChevronRight, Quote, Clock,
@@ -15,7 +17,8 @@ import { FacebookIcon } from "./ui/FacebookIcon";
 
 
 /* ── Replace this URL with your actual logo ── */
-const LOGO_URL = null; // Set to your logo image URL or import path
+const LOGO_URL = logoUrl;
+const WOLF_IMAGE = wolfUrl;
 
 const FD = "'Bebas Neue', sans-serif";
 const FB = "'DM Sans', 'Helvetica Neue', sans-serif";
@@ -97,7 +100,7 @@ const CTAButton = ({ href, children, size = "md", variant = "primary", className
    UTILITY: Logo component
    ═══════════════════════════════════════════ */
 const Logo = ({ size = "md" }) => {
-  const dims = size === "sm" ? "w-8 h-8" : "w-10 h-10";
+  const dims = size === "sm" ? "w-8 h-8" : "w-15 h-15";
   if (LOGO_URL) {
     return <img src={LOGO_URL} alt="Centro TKD" className={`${dims} object-contain rounded-lg`} />;
   }
@@ -134,9 +137,6 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto flex items-center justify-between px-5 py-3.5">
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo("hero")}>
           <Logo />
-          <span className="text-lg font-semibold tracking-tight hidden sm:block">
-            Centro <span className="text-red-500">TKD</span>
-          </span>
         </div>
 
         <div className="hidden lg:flex items-center gap-7">
@@ -239,7 +239,7 @@ const Hero = () => (
           </div>
 
           {/* Stats */}
-          <div className="flex items-center gap-6 sm:gap-10 mt-10 justify-center lg:justify-start">
+          <div className="flex items-center gap-6 sm:gap-10  mt-10 justify-center lg:justify-start">
             {[
               { val: "+200", label: "Alumnos activos" },
               { val: "+10", label: "Años de experiencia" },
@@ -260,55 +260,12 @@ const Hero = () => (
         <div className="flex-1 max-w-md lg:max-w-lg w-full flex items-center">
           <div className="relative w-full">
             <div className="absolute -inset-8 bg-red-600/10 rounded-3xl blur-3xl" />
-            <div className="relative bg-gradient-to-br from-neutral-800/60 to-neutral-900/80 border border-white/10 rounded-2xl overflow-hidden aspect-square">
-              <svg viewBox="0 0 500 500" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#1a1a1a" /><stop offset="100%" stopColor="#0a0a0a" /></linearGradient>
-                  <radialGradient id="spot" cx="50%" cy="45%" r="45%"><stop offset="0%" stopColor="#dc2626" stopOpacity=".18" /><stop offset="100%" stopColor="transparent" /></radialGradient>
-                  <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor="#dc2626" stopOpacity=".08" /><stop offset="100%" stopColor="transparent" /></radialGradient>
-                </defs>
-                <rect width="500" height="500" fill="url(#bgG)" />
-                <rect width="500" height="500" fill="url(#spot)" />
-
-                {/* Decorative concentric circles */}
-                <circle cx="250" cy="240" r="180" fill="none" stroke="rgba(220,38,38,.06)" strokeWidth="1" />
-                <circle cx="250" cy="240" r="140" fill="none" stroke="rgba(220,38,38,.04)" strokeWidth="1" />
-                <circle cx="250" cy="240" r="100" fill="none" stroke="rgba(220,38,38,.03)" strokeWidth="1" />
-
-                {/* Centered kicker silhouette */}
-                <g transform="translate(250, 245)" opacity=".9">
-                  {/* Torso */}
-                  <ellipse cx="-5" cy="-15" rx="24" ry="42" fill="#dc2626" opacity=".9" />
-                  {/* Head */}
-                  <circle cx="-5" cy="-72" r="20" fill="#dc2626" opacity=".9" />
-                  {/* Back arm */}
-                  <line x1="-20" y1="-42" x2="-60" y2="-20" stroke="#dc2626" strokeWidth="11" strokeLinecap="round" opacity=".7" />
-                  {/* Front arm guard */}
-                  <line x1="10" y1="-42" x2="48" y2="-58" stroke="#dc2626" strokeWidth="11" strokeLinecap="round" opacity=".9" />
-                  <line x1="48" y1="-58" x2="42" y2="-78" stroke="#dc2626" strokeWidth="9" strokeLinecap="round" opacity=".8" />
-                  {/* Standing leg */}
-                  <line x1="-12" y1="24" x2="-25" y2="100" stroke="#dc2626" strokeWidth="13" strokeLinecap="round" opacity=".9" />
-                  <line x1="-25" y1="100" x2="-30" y2="140" stroke="#dc2626" strokeWidth="11" strokeLinecap="round" opacity=".8" />
-                  {/* Kicking leg — high roundhouse */}
-                  <line x1="8" y1="14" x2="85" y2="-50" stroke="#dc2626" strokeWidth="13" strokeLinecap="round" opacity=".95" />
-                  <line x1="85" y1="-50" x2="140" y2="-68" stroke="#dc2626" strokeWidth="11" strokeLinecap="round" opacity=".9" />
-                  {/* Impact burst */}
-                  <circle cx="140" cy="-68" r="22" fill="url(#glow)" />
-                  <circle cx="140" cy="-68" r="8" fill="#dc2626" opacity=".3" />
-                </g>
-
-                {/* Korean text accent */}
-                <text x="250" y="440" textAnchor="middle" fill="rgba(255,255,255,.05)" fontSize="52"
-                  style={{ fontFamily: FD, letterSpacing: 14 }}>태권도</text>
-
-                {/* Bottom accent line */}
-                <line x1="80" y1="460" x2="420" y2="460" stroke="rgba(220,38,38,.15)" strokeWidth="1" />
-                <line x1="140" y1="472" x2="360" y2="472" stroke="rgba(220,38,38,.08)" strokeWidth="1" />
-              </svg>
-
+            <div className="relative bg-gradient-to-b from-neutral-900/80 to-black border border-white/10 rounded-2xl overflow-hidden aspect-square flex items-center justify-center">
+              <img src={WOLF_IMAGE} alt="Centro TKD" className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-50" />
               {/* Overlay badge */}
               <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm border border-white/10 rounded-lg px-3 py-1.5 text-xs font-medium text-neutral-300 flex items-center gap-1.5">
-                <Award size={12} className="text-red-500" /> Desde 2014
+                <Award size={12} className="text-red-500" /> Desde -
               </div>
             </div>
           </div>
