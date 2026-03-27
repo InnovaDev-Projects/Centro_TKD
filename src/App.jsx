@@ -391,7 +391,7 @@ const Gallery = () => {
   const photos = [
     { label: "Clase grupal", gradient: "from-red-900/50 to-red-950/70", icon: <Swords size={40} strokeWidth={1.2} />, sub: "Trabajo en equipo" },
     { label: "Competencia", gradient: "from-neutral-800/60 to-neutral-900/80", icon: <Trophy size={40} strokeWidth={1.2} />, sub: "Torneos oficiales" },
-    { label: "Niños", gradient: "from-red-800/40 to-neutral-900/70", icon: <Heart size={40} strokeWidth={1.2} />, sub: "Desde los 4 años" },
+    { label: "Niños", gradient: "from-red-800/40 to-neutral-900/70", icon: <Heart size={40} strokeWidth={1.2} />, sub: "Desde los X años" },
     { label: "Entrenamiento", gradient: "from-neutral-700/50 to-neutral-950/80", icon: <Zap size={40} strokeWidth={1.2} />, sub: "Alta intensidad" },
     { label: "Graduación", gradient: "from-red-900/40 to-neutral-900/60", icon: <Award size={40} strokeWidth={1.2} />, sub: "Exámenes de cinturón" },
     { label: "Exhibición", gradient: "from-neutral-800/50 to-red-950/60", icon: <Flame size={40} strokeWidth={1.2} />, sub: "Eventos especiales" },
