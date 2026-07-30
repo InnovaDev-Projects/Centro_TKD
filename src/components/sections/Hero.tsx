@@ -19,7 +19,7 @@ export const Hero = () => {
           {/* Contenido */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-red-500 mb-4 font-body">
-              Academia de Taekwondo · Gran Buenos Aires
+              Academia de Taekwondo · Moreno
             </p>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-5">

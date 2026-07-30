@@ -59,6 +59,8 @@ export const Footer = () => {
         <div className="mt-8 pt-6 border-t border-zinc-900 text-center">
           <p className="text-zinc-500 text-xs">
             © {currentYear} Centro TKD. Todos los derechos reservados.
+            <br />
+            <a href="https://www.instagram.com/matt._dev/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-red-600 transition-colors">Desarrollado por Matt._dev</a>
           </p>
         </div>
       </div>
