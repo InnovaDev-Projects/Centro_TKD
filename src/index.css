@@ -1,1 +1,53 @@
 @import "tailwindcss";
+
+/* ==========================================
+   SISTEMA DE DISEÑO — CENTRO TKD
+   Negro · Rojo · Minimalista · Profesional
+   ========================================== */
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Plus Jakarta Sans', 'DM Sans', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  .font-body {
+    font-family: 'Plus Jakarta Sans', 'DM Sans', system-ui, sans-serif;
+  }
+}
+
+/* Animación de entrada sutil */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeUp 0.35s ease-out forwards;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+  background-color: #0a0a0a;
+  color: #f5f5f5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #dc2626; }
+
+/* Foco accesible */
+*:focus-visible {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+/* Selección */
+::selection {
+  background-color: #dc2626;
+  color: #ffffff;
+}
